@@ -3,6 +3,8 @@ package ru.netology.springbootdaohibernate.repository;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 
+import lombok.RequiredArgsConstructor;
+
 import org.springframework.stereotype.Repository;
 
 import ru.netology.springbootdaohibernate.entity.Person;
@@ -10,10 +12,7 @@ import ru.netology.springbootdaohibernate.entity.Person;
 import java.util.List;
 
 @Repository
-//public interface PersonRepository extends JpaRepository<Person, Contact> {
-//
-//    List<Person> findByCity(String city);
-//}
+@RequiredArgsConstructor
 public class PersonRepository {
     @PersistenceContext
     private EntityManager entityManager;
