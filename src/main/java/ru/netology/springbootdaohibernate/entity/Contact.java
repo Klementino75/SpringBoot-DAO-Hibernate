@@ -12,8 +12,13 @@ import java.io.Serializable;
 
 @Embeddable
 @Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@Getter
+@Setter
+@EqualsAndHashCode
+@ToString
 public class Contact implements Serializable {
     @Column(name = "name", length = 50, nullable = false)
     private String name;
