@@ -1,0 +1,8 @@
+###
+GET localhost:8080/persons/by-city?city=MOSCOW
+
+###
+GET localhost:8080/persons/by-city?city=Moscow
+
+###
+GET localhost:8080/persons/by-city?city=tver
