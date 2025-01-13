@@ -6,7 +6,6 @@ import jakarta.persistence.PersistenceContext;
 import lombok.RequiredArgsConstructor;
 
 import org.springframework.stereotype.Repository;
-
 import ru.netology.springbootdaohibernate.entity.Person;
 
 import java.util.List;
@@ -15,12 +14,18 @@ import java.util.List;
 @RequiredArgsConstructor
 public class PersonRepository {
     @PersistenceContext
-    private EntityManager entityManager;
+    private final EntityManager entityManager;
 
-    public List<Person> getPersonByCity(String city) {
+    public List<Person> getPersonsByCity(String city) {
         final String script = "SELECT p FROM Person p WHERE LOWER(p.cityOfLiving) = LOWER(:city)";
-        return entityManager.createQuery(script, Person.class)
+        List<Person> resultList = entityManager.createQuery(script, Person.class)
                 .setParameter("city", city)
                 .getResultList();
+        resultList.forEach(System.out::println);
+        return resultList;
+//        // или так...
+//        return entityManager.createQuery(script, Person.class)
+//                .setParameter("city", city)
+//                .getResultList();
     }
 }

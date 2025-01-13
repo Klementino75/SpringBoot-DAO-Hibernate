@@ -1,7 +1,6 @@
 package ru.netology.springbootdaohibernate.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Embeddable;
+import jakarta.persistence.*;
 
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
@@ -11,14 +10,11 @@ import lombok.*;
 import java.io.Serializable;
 
 @Embeddable
-@Data
-@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Getter
 @Setter
+@Getter
 @EqualsAndHashCode
-@ToString
 public class Contact implements Serializable {
     @Column(name = "name", length = 50, nullable = false)
     private String name;
@@ -30,4 +26,9 @@ public class Contact implements Serializable {
     @Min(1)
     @Max(150)
     private int age;
+
+    @Override
+    public String toString() {
+        return '\'' + name + "', '" + surname + "', '" + age + '\'';
+    }
 }

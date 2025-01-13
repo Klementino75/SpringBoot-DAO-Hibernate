@@ -2,19 +2,19 @@ package ru.netology.springbootdaohibernate.service;
 
 import lombok.RequiredArgsConstructor;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import ru.netology.springbootdaohibernate.entity.Person;
 import ru.netology.springbootdaohibernate.repository.PersonRepository;
 
-import java.util.List;
-
 @Service
 @RequiredArgsConstructor
 public class PersonService {
-    private PersonRepository personRepository;
+    private final PersonRepository personRepository;
 
     public List<Person> getPersonsByCity(String city) {
-        return personRepository.getPersonByCity(city);
+        return personRepository.getPersonsByCity(city);
     }
 }

@@ -13,14 +13,13 @@ import ru.netology.springbootdaohibernate.service.PersonService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/persons")
 @RequiredArgsConstructor
+@RequestMapping("/persons")
 public class PersonController {
-
-    private PersonService personService;
+    private final PersonService personService;
 
     @GetMapping("/by-city")
-    public List<Person> getPersonsByCity(@RequestParam String city) {
+    public List<Person> getPersonsByCity(@RequestParam(value = "city", required = false) String city) {
         return personService.getPersonsByCity(city);
     }
 }
