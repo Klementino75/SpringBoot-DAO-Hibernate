@@ -19,7 +19,6 @@ public class PersonService {
     }
 
     public List<Person> getPersonsByCity(String city) {
-//        return personRepository.findByCity(city);
-        return personRepository.getPersonByCity(city);
+        return personRepository.getPersonsByCity(city);
     }
 }
