@@ -22,6 +22,6 @@ public class Person {
 
     @Override
     public String toString() {
-        return "{" + contact + ", '" + phoneNumber + '\'' + ", '" + cityOfLiving + '\'' + '}';
+        return "{\n %s, '%s', '%s'\n}".formatted(contact, phoneNumber, cityOfLiving);
     }
 }

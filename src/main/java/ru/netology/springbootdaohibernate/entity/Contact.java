@@ -29,6 +29,6 @@ public class Contact implements Serializable {
 
     @Override
     public String toString() {
-        return '\'' + name + "', '" + surname + "', '" + age + '\'';
+        return "'%s', '%s', '%d'".formatted(name, surname, age);
     }
 }

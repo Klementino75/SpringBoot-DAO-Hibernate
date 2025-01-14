@@ -1,31 +1,19 @@
 package ru.netology.springbootdaohibernate.repository;
 
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.PersistenceContext;
-
-import lombok.RequiredArgsConstructor;
-
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+import ru.netology.springbootdaohibernate.entity.Contact;
 import ru.netology.springbootdaohibernate.entity.Person;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
-@RequiredArgsConstructor
-public class PersonRepository {
-    @PersistenceContext
-    private final EntityManager entityManager;
+public interface PersonRepository extends JpaRepository<Person, Contact> {
 
-    public List<Person> getPersonsByCity(String city) {
-        final String script = "SELECT p FROM Person p WHERE LOWER(p.cityOfLiving) = LOWER(:city)";
-        List<Person> resultList = entityManager.createQuery(script, Person.class)
-                .setParameter("city", city)
-                .getResultList();
-        resultList.forEach(System.out::println);
-        return resultList;
-//        // или так...
-//        return entityManager.createQuery(script, Person.class)
-//                .setParameter("city", city)
-//                .getResultList();
-    }
+    List<Person> findAllPersonByCityOfLiving(String cityOfLiving);
+
+    List<Person> findAllByContact_AgeLessThanOrderByContact_Age(int age);
+
+    Optional<Person> findAllByContact_NameAndContact_Surname(String contactName, String surname);
 }
