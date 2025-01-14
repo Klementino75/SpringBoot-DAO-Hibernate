@@ -1,5 +1,5 @@
 ### Домашнее задание.
 
-#### 8.4. ORM, Hibernate.
+#### 8.5. Spring Data JPA.
 
-Задание 2. Миграции c Hibernate* (задача со звёздочкой).
+Задание. Слой DAO c JPA Repositories.
