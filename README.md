@@ -8,4 +8,6 @@
 
 #### 8.5. Spring Data JPA.
 
-Задание. Слой DAO c JPA Repositories в ветке **_jpa-repository_**.
+Задание 1. Слой DAO c JPA Repositories в ветке **_jpa-repository_**.
+
+Задание 2. @Query* (задача со звёздочкой) в ветке **_jpa-repository-query_**.
