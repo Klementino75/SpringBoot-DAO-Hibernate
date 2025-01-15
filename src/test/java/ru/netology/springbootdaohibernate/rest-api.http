@@ -2,7 +2,7 @@
 GET localhost:8080/persons/by-city?city=MOSCOW
 
 ###
-GET localhost:8080/persons/by-city?city=TVER
+GET localhost:8080/persons/by-city?city=sochi
 
 ###
 GET localhost:8080/persons/by-age?age=30
@@ -12,3 +12,6 @@ GET localhost:8080/persons/by-name-surname?name=Ivan&surname=Ivanov
 
 ###
 GET localhost:8080/persons/by-name-surname?name=Andrey&surname=S
+
+###
+GET localhost:8080/persons/by-name-surname?name=sergey&surname=aleksandrov

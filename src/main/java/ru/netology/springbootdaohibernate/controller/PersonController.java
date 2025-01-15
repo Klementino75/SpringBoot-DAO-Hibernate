@@ -42,8 +42,7 @@ public class PersonController {
         var result = personService.getPersonByNameAndSurname(name, surname);
         result.ifPresentOrElse(
                 System.out::println,
-                () -> System.out.println("There is no such Person!")
-        );
+                () -> System.out.println("There is no such Person!"));
         return result;
     }
 }
