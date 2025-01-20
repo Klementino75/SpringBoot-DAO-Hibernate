@@ -11,3 +11,7 @@
 Задание 1. Слой DAO c JPA Repositories в ветке **_jpa-repository_**.
 
 Задание 2. @Query* (задача со звёздочкой) в ветке **_jpa-repository-query_**.
+
+#### 8.6. Безопасность в веб-приложениях, Spring Security.
+
+Задание. Безопасное приложение в ветке **_security_**.
