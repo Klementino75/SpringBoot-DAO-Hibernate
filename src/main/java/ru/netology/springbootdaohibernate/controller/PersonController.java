@@ -20,7 +20,7 @@ public class PersonController {
     private final PersonService personService;
 
     @GetMapping("/by-city") // localhost:8080/persons/by-city?city=MOSCOW
-    public List<Person> getPersonsByCity(
+    protected List<Person> getPersonsByCity(
             @RequestParam(value = "city", required = false) String city) {
         var result = personService.getPersonsByCity(city);
         result.forEach(System.out::println);
@@ -44,5 +44,10 @@ public class PersonController {
                 System.out::println,
                 () -> System.out.println("There is no such Person!"));
         return result;
+    }
+
+    @GetMapping("/hello")
+    public String hello() {
+        return "Hello not authenticated user!";
     }
 }

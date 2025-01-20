@@ -15,3 +15,6 @@ GET localhost:8080/persons/by-name-surname?name=Andrey&surname=S
 
 ###
 GET localhost:8080/persons/by-name-surname?name=sergey&surname=aleksandrov
+
+###
+GET localhost:8080/persons/hello
