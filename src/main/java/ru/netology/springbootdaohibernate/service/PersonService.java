@@ -26,4 +26,19 @@ public class PersonService {
     public Optional<Person> getPersonByNameAndSurname(String name, String surname) {
         return personRepository.findAllByContact_NameAndContact_Surname(name, surname);
     }
+
+    public void createPerson(Person person) {
+        personRepository.save(person);
+        throw new RuntimeException("There is such person!");
+    }
+
+    public void updatePerson(Person person) {
+        personRepository.save(person);
+        throw new RuntimeException("There is no such person!");
+    }
+
+    public void deletePerson(Person person) {
+        personRepository.delete(person);
+        throw new RuntimeException("There is no such person!");
+    }
 }
